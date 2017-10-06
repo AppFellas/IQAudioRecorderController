@@ -24,8 +24,8 @@
 
 
 #import <UIKit/UIKit.h>
-
 #import "IQAudioRecorderConstants.h"
+#import <AVFoundation/AVFoundation.h>
 
 @class IQAudioRecorderViewController;
 
@@ -124,6 +124,16 @@
  */
 @property(nonatomic,assign) NSInteger bitRate;
 
+/**
+ * Player
+ */
+@property(nonatomic,assign) AVAudioPlayer* _Nullable player;
+
+/**
+ * Recorder
+ */
+@property(nonatomic,assign) AVAudioRecorder* _Nullable recorder;
+
 @end
 
 
@@ -131,5 +141,15 @@
 
 - (void)presentAudioRecorderViewControllerAnimated:(nonnull IQAudioRecorderViewController *)audioRecorderViewController;
 - (void)presentBlurredAudioRecorderViewControllerAnimated:(nonnull IQAudioRecorderViewController *)audioRecorderViewController;
+
+- (void)stopRecordingButtonAction:(UIBarButtonItem*_Nullable)item;
+- (void)recordingButtonAction:(UIBarButtonItem *_Nullable)item;
+- (void)playAction:(UIBarButtonItem *_Nullable)item;
+- (void)pausePlayingAction:(UIBarButtonItem*_Nullable)item;
+- (void)updatePlayProgress;
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *_Nullable)player successfully:(BOOL)flag;
+- (void)stopPlayingButtonAction:(UIBarButtonItem*_Nullable)item;
+- (void)updateMeters;
+- (void)getFilePath: (NSString*_Nullable)filePath;
 
 @end
