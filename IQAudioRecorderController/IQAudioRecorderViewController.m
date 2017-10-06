@@ -324,6 +324,8 @@
         _audioRecorder.delegate = self;
         _audioRecorder.meteringEnabled = YES;
         
+        _recorder = _audioRecorder;
+        
         musicFlowView.primaryWaveLineWidth = 3.0f;
         musicFlowView.secondaryWaveLineWidth = 1.0;
     }
@@ -526,6 +528,8 @@
         _audioPlayer.meteringEnabled = YES;
     }
     
+    _player = _audioPlayer;
+    
     [_audioPlayer prepareToPlay];
     [_audioPlayer play];
     
@@ -596,6 +600,7 @@
     _audioPlayer.delegate = nil;
     [_audioPlayer stop];
     _audioPlayer = nil;
+    _player = nil;
     
     [[AVAudioSession sharedInstance] setCategory:_oldSessionCategory error:nil];
     [UIApplication sharedApplication].idleTimerDisabled = _wasIdleTimerDisabled;
@@ -711,11 +716,16 @@
 
         [[AVAudioSession sharedInstance] setCategory:_oldSessionCategory error:nil];
         [UIApplication sharedApplication].idleTimerDisabled = _wasIdleTimerDisabled;
+        [self getFilePath:_recordingFilePath];
     }
     else
     {
         [[NSFileManager defaultManager] removeItemAtPath:_recordingFilePath error:nil];
     }
+}
+
+- (void)getFilePath: (NSString *)filePath {
+    
 }
 
 - (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error

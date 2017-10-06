@@ -134,14 +134,6 @@
  */
 @property(nonatomic,assign) AVAudioRecorder* _Nullable recorder;
 
-@end
-
-
-@interface UIViewController (IQAudioRecorderViewController)
-
-- (void)presentAudioRecorderViewControllerAnimated:(nonnull IQAudioRecorderViewController *)audioRecorderViewController;
-- (void)presentBlurredAudioRecorderViewControllerAnimated:(nonnull IQAudioRecorderViewController *)audioRecorderViewController;
-
 - (void)stopRecordingButtonAction:(UIBarButtonItem*_Nullable)item;
 - (void)recordingButtonAction:(UIBarButtonItem *_Nullable)item;
 - (void)playAction:(UIBarButtonItem *_Nullable)item;
@@ -151,5 +143,16 @@
 - (void)stopPlayingButtonAction:(UIBarButtonItem*_Nullable)item;
 - (void)updateMeters;
 - (void)getFilePath: (NSString*_Nullable)filePath;
+
+@end
+
+
+@interface UIViewController (IQAudioRecorderViewController)
+
+- (void)presentAudioRecorderViewControllerAnimated:(nonnull IQAudioRecorderViewController *)audioRecorderViewController;
+- (void)presentBlurredAudioRecorderViewControllerAnimated:(nonnull IQAudioRecorderViewController *)audioRecorderViewController;
+
+
+
 
 @end
