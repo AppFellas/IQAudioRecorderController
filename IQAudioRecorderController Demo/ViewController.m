@@ -78,7 +78,7 @@
     controller.allowCropping = switchAllowsCropping.on;
     controller.normalTintColor = normalTintColor;
     controller.highlightedTintColor = highlightedTintColor;
-    
+    controller.waveAreaBackgroundColor = [UIColor clearColor];
     if (switchDarkUserInterface.on)
     {
         controller.barStyle = UIBarStyleBlack;
@@ -132,7 +132,7 @@
     controller.title = @"Crop";
     controller.normalTintColor = normalTintColor;
     controller.highlightedTintColor = highlightedTintColor;
-
+    
     if (switchDarkUserInterface.on)
     {
         controller.barStyle = UIBarStyleBlack;

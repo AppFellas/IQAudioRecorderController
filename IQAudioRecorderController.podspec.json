@@ -1,6 +1,6 @@
 {
     "name": "IQAudioRecorderController",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "source": {
       "git": "https://github.com/hackiftekhar/IQAudioRecorderController.git",
       "tag": "v1.2.2"

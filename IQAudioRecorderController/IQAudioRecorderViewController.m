@@ -91,6 +91,7 @@
 @implementation IQAudioRecorderViewController
 
 @dynamic title;
+//@dynamic waveAreaBackgroundColor;
 
 #pragma mark - Private Helper
 
@@ -418,6 +419,12 @@
                 visualEffectView.backgroundColor = [UIColor darkGrayColor];
             }
         }
+    }
+    
+    if (_waveAreaBackgroundColor != nil) {
+        visualEffectView.backgroundColor = _waveAreaBackgroundColor;
+    } else {
+        visualEffectView.backgroundColor = [UIColor clearColor];
     }
 }
 

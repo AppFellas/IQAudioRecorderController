@@ -134,6 +134,12 @@
  */
 @property(nonatomic,assign) AVAudioRecorder* _Nullable recorder;
 
+/**
+ *
+ */
+@property(nonatomic,assign) UIColor* _Nullable waveAreaBackgroundColor;
+
+
 - (void)stopRecordingButtonAction:(UIBarButtonItem*_Nullable)item;
 - (void)recordingButtonAction:(UIBarButtonItem *_Nullable)item;
 - (void)playAction:(UIBarButtonItem *_Nullable)item;
