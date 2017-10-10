@@ -219,13 +219,14 @@
         NSMutableArray *constraints = [[NSMutableArray alloc] init];
         
         [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[musicFlowView]-|" options:0 metrics:nil views:views]];
+        [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[musicFlowView]-|" options:0 metrics:nil views:views]];
         [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[viewMicrophoneDenied]-|" options:0 metrics:nil views:views]];
 
         [constraints addObject:[NSLayoutConstraint constraintWithItem:musicFlowView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:visualEffectView.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
         [constraints addObject:[NSLayoutConstraint constraintWithItem:viewMicrophoneDenied attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:visualEffectView.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
 
         [visualEffectView.contentView addConstraints:constraints];
-
+        
         [musicFlowView addConstraint:[NSLayoutConstraint constraintWithItem:musicFlowView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:musicFlowView attribute:NSLayoutAttributeHeight multiplier:0.25 constant:0]];
     }
 
